@@ -41,6 +41,9 @@ public class Movement : MonoBehaviour
 
     private void ApplyRotation(Vector3 direction)
     {
+        // Need to freeze rotation in the physics engine when we apply our manual rotation
+        rb.freezeRotation = true;
         transform.Rotate(direction * rotationSpeed * Time.deltaTime);
+        rb.freezeRotation = false;
     }
 }
