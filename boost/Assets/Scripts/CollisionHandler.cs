@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-   
+   [SerializeField] float changeLevelDelay = 1f;
     void OnCollisionEnter(Collision other) 
     {
         switch(other.gameObject.tag)
@@ -48,13 +48,13 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence()
     {
         GetComponent<Movement>().enabled = false;
-        Invoke("ReloadLevel", 1f);
+        Invoke("ReloadLevel", changeLevelDelay);
     }
 
     void StartFinishSequence()
     {
         GetComponent<Movement>().enabled = false;
-        Invoke("AdvanceLevel", 1f);
+        Invoke("AdvanceLevel", changeLevelDelay);
     }
 
 }
