@@ -1,7 +1,11 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+
     void OnCollisionEnter(Collision other) 
     {
         switch(other.gameObject.tag)
@@ -14,7 +18,14 @@ public class CollisionHandler : MonoBehaviour
                 break;
             default:
                 Debug.Log("Sorry you crashed into something");
+                ReloadLevel();
                 break;
         }
+    }
+
+    void ReloadLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
