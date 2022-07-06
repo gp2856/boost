@@ -354,6 +354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Landing Pad
       objectReference: {fileID: 0}
+    - target: {fileID: 3911189425530049744, guid: 22d7e2237bfff994fb6139d37c093b39, type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22d7e2237bfff994fb6139d37c093b39, type: 3}
 --- !u!1001 &126266842704251573
@@ -369,6 +373,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b3dfc4a5d58fb3f4f8c23c46d9b3f3c9, type: 2}
     - target: {fileID: 3922983368867720936, guid: 2125bfed766502343a4c6f0a433a8e0a, type: 3}
       propertyPath: m_Name
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922983368867720936, guid: 2125bfed766502343a4c6f0a433a8e0a, type: 3}
+      propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 7952455807655783619, guid: 2125bfed766502343a4c6f0a433a8e0a, type: 3}
@@ -472,6 +480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Launchpad
       objectReference: {fileID: 0}
+    - target: {fileID: 3911189425530049744, guid: 22d7e2237bfff994fb6139d37c093b39, type: 3}
+      propertyPath: m_TagString
+      value: Friendly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22d7e2237bfff994fb6139d37c093b39, type: 3}
 --- !u!1001 &1736189640739428786
@@ -538,13 +550,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 751725292, guid: b71c197fba08e7b4bbe0313cf93bea9e, type: 3}
-      propertyPath: m_Constraints
-      value: 56
-      objectReference: {fileID: 0}
     - target: {fileID: 565760275032178615, guid: b71c197fba08e7b4bbe0313cf93bea9e, type: 3}
       propertyPath: m_Name
       value: Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 565760275032178615, guid: b71c197fba08e7b4bbe0313cf93bea9e, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2373630161941507358, guid: b71c197fba08e7b4bbe0313cf93bea9e, type: 3}
       propertyPath: m_RootOrder
