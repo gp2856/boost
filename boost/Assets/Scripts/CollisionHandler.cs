@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+   
     void OnCollisionEnter(Collision other) 
     {
         switch(other.gameObject.tag)
@@ -13,11 +14,10 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("This object is friendly");
                 break;
             case "Finish":
-                AdvanceLevel();
+                StartFinishSequence();
                 break;
             default:
-                Debug.Log("Sorry you crashed into something");
-                ReloadLevel();
+                StartCrashSequence();
                 break;
         }
     }
@@ -35,7 +35,7 @@ public class CollisionHandler : MonoBehaviour
         
         // If the next Scene index is not greater than the number of scenes, load it
         // otherwise, load the first level
-        if (nextSceneIndex < SceneManager.sceneCount)
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(nextSceneIndex);
         }
@@ -44,4 +44,17 @@ public class CollisionHandler : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
+    void StartCrashSequence()
+    {
+        GetComponent<Movement>().enabled = false;
+        Invoke("ReloadLevel", 1f);
+    }
+
+    void StartFinishSequence()
+    {
+        GetComponent<Movement>().enabled = false;
+        Invoke("AdvanceLevel", 1f);
+    }
+
 }
